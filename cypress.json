@@ -1,12 +1,13 @@
 {
-    "baseUrl": "https://www.amazon.com.br/",
-    "testFiles": [
-      "buy/buy.spec.js"
-    ],
-    "chromeWebSecurity": false,
-    "viewportHeight": 1024,
-    "viewportWidth": 1080,
-    "numTestsKeptInMemory": 5,
-    "video": false,
-    "watchForFileChanges": false
-  }
+  "baseUrl": "https://www.amazon.com.br/",
+  "testFiles": [
+    "login/login.spec.js",
+    "buy/buy.spec.js"
+  ],
+  "chromeWebSecurity": false,
+  "viewportHeight": 1024,
+  "viewportWidth": 1080,
+  "numTestsKeptInMemory": 5,
+  "video": false,
+  "watchForFileChanges": false
+}

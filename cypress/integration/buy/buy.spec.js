@@ -14,6 +14,7 @@ const buyObjects = new BuyObjects();
 context('FEATURE-BUY ITEM', () => {
     describe('Validate home screen', () => {
         it('Given I fill in the url with "www.amazon.com.br"', () => {
+            cy.login(constants.user, constants.password);
             buyPage.goToHomeScreen();
         })
         it('When the browser takes you to the amazon home screen', () => {
@@ -38,13 +39,14 @@ context('FEATURE-BUY ITEM', () => {
 
     describe('Validate Add item to cart successfully', () => {
         it('Given you have selected an item', () => {
-            cy.fill(buyObjects.inputSearch, constants.productDefault);
+            cy.selectValue(buyObjects.selectQuantity, constants.amountDefault);
+            cy.clickElement(buyObjects.btnAdd);
         })
         it('When you click on the add to cart button', () => {
-            cy.clickElement(buyObjects.btnSearch);
+
         });
         it('Then the message is displayed stating that it has been added to the cart', () => {
-            buyPage.clickOptionSearchItemDefault();
+            buyPage.validateQuantityAdd(constants.amountDefault);
         });
     });
 });

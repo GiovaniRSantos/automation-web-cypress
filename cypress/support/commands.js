@@ -1,5 +1,12 @@
 /// <reference types="cypress" />
 
+import Constants from "../../until/constants/constants";
+import LoginObjects from "../../until/PageObject/loginObject/login-object";
+
+const constants = new Constants();
+const loginObjects = new LoginObjects();
+
+
 afterEach(() => {
     let str = [];
     cy.getCookies().then((cook) => {
@@ -18,6 +25,20 @@ afterEach(() => {
         return false
     });
 });
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('/');
+    cy.intercept('POST', '**/corporate/login').as('getToken');
+    cy.get(constants.user).type(username);
+    cy.get(constants.PassWord).type(password);
+    cy.get(loginObjects.btnSubmit).click();
+    cy.wait('@getToken');
+});
+
+Cypress.Commands.add('mouseOver', (locator) => {
+    cy.get(locator).trigger('mouseover');
+});
+
 
 Cypress.Commands.add('waitAllGetRequest', () => {
     cy.intercept('GET', '/**').as('waitGET');
@@ -39,4 +60,14 @@ Cypress.Commands.add('fill', (locator, text) => {
 
 Cypress.Commands.add('clickElement', (locator) => {
         cy.get(locator).click();
+});
+
+Cypress.Commands.add('selectValue', (locator, value) => {
+    cy.get(locator).select(value)
+});
+
+Cypress.Commands.add('validateElementText', (locator, text) => {
+    cy.get(locator, {
+        timeout: 50000
+    }).should('contain.text', text);
 });
