@@ -15,14 +15,9 @@ Config Amb:
 Open project and run script in terminal: 
     npm install
 
-"scripts": {
-    "cypress:open": "./node_modules/.bin/cypress open --browser chrome",
-    "cy:run": "npm run allure:clear && npx cypress run --config video=false --env allure=true --browser chrome",
-    "allure:clear": "rm -r -f allure-results && rm -r -f cypress/screenshots && rm -r -f allure-report",
-    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
-  }
 
-Instructions for scripts:
+
+Instructions for scripts in package.json:
 
 Use to:
 - cypress:open
