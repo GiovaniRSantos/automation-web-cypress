@@ -18,18 +18,18 @@ https://docs.cypress.io/guides/getting-started/installing-cypress#System-require
     "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   }
 
-* Use to:
+Use to:
 - cypress:open
-  Open Cypress
+  --Open Cypress
   
 - cy:run
-  Run all specs headless mode with allure report
+  --Run all specs headless mode with allure report
   
 - allure 
-  Remove all folders created by the report
+  --Remove all folders created by the report
   
 - report
-  report generate
+  --report generate
 
   
   
