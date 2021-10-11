@@ -25,10 +25,10 @@ Use to:
 - cy:run
   Run all specs headless mode with allure report
   
--allure 
+- allure 
   Remove all folders created by the report
   
--report
+- report
   report generate
 
   
