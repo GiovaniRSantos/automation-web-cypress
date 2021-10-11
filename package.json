@@ -1,0 +1,22 @@
+{
+  "name": "projeto-i.systems",
+  "version": "1.0.0",
+  "description": "desafio",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiovaniRSantos/automation-web-cypress.git"
+  },
+  "author": "Giovani Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiovaniRSantos/automation-web-cypress/issues"
+  },
+  "homepage": "https://github.com/GiovaniRSantos/automation-web-cypress#readme",
+  "devDependencies": {
+    "cypress": "^8.5.0"
+  }
+}
