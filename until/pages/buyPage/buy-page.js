@@ -27,7 +27,6 @@ class BuyPage {
             cy.selectValue(buyObjects.selectQuantity, constants.amountDefault);
             cy.clickElement(buyObjects.btnAdd);
             cy.clickElement(buyObjects.btnCart);
-            cy.log(textTr);
             cy.get(buyObjects.tittleItemFinish).should('have.text', textTr);
         })
     }
