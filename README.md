@@ -1,13 +1,13 @@
 Dependencies:
 
-NODE:
+- NODE:
 https://nodejs.dev/download
 
-Allure-report:
+- Allure-report:
 https://github.com/Shelex/cypress-allure-plugin
 https://docs.qameta.io/allure/
 
-Cypress:
+- Cypress:
 npm install cypress --save-dev
 https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements
 
@@ -18,7 +18,7 @@ https://docs.cypress.io/guides/getting-started/installing-cypress#System-require
     "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   }
 
-Use to:
+* Use to:
 - cypress:open
   Open Cypress
   
