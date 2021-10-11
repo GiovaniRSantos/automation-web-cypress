@@ -13,7 +13,7 @@ https://docs.cypress.io/guides/getting-started/installing-cypress#System-require
 
 Config Amb:
 Open project and run script in terminal: 
-    -- npm install
+    npm install
 
 "scripts": {
     "cypress:open": "./node_modules/.bin/cypress open --browser chrome",
