@@ -8,7 +8,6 @@ https://github.com/Shelex/cypress-allure-plugin
 https://docs.qameta.io/allure/
 
 - Cypress:
-npm install cypress --save-dev
 https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements
 
 "scripts": {
