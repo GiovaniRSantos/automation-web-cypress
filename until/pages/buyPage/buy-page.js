@@ -17,8 +17,23 @@ class BuyPage {
         cy.get(buyObjects.tittleItem).contains(constants.productDefault).click();
     }
 
-    validateQuantityAdd(value = String){
+    validateQuantityAdd(value = String) {
         cy.get(buyObjects.quantitySelected).should('have.value', value);
+    }
+
+    validateItemCart() {
+        cy.get(buyObjects.tittleItemAnnouncement).invoke('text').then((text) => {
+            const textTr = text.replace(/(\r\n|\n|\r)/gm, "");
+            cy.selectValue(buyObjects.selectQuantity, constants.amountDefault);
+            cy.clickElement(buyObjects.btnAdd);
+            cy.clickElement(buyObjects.btnCart);
+            cy.log(textTr);
+            cy.get(buyObjects.tittleItemFinish).should('have.text', textTr);
+        })
+    }
+
+    deleteAllItemsCart() {
+        cy.clickElement(buyObjects.btnDeleteItem);
     }
 
 }

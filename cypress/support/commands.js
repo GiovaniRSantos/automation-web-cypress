@@ -26,13 +26,20 @@ afterEach(() => {
     });
 });
 
+Cypress.Commands.add('closeSessionNavigator', () => {
+    cy.clearCookies()
+    cy.window().then((win) => {
+        win.sessionStorage.clear()
+    });
+});
+
 Cypress.Commands.add('login', (username, password) => {
-    cy.visit('/');
-    cy.intercept('POST', '**/corporate/login').as('getToken');
-    cy.get(constants.user).type(username);
-    cy.get(constants.PassWord).type(password);
-    cy.get(loginObjects.btnSubmit).click();
-    cy.wait('@getToken');
+    cy.visit('/')
+    cy.clickElement(loginObjects.btnAccount);
+    cy.fill(loginObjects.inputEmail, constants.user);
+    cy.clickElement(loginObjects.btnContinueLogin);
+    cy.fill(loginObjects.inputPassword, constants.password);
+    cy.clickElement(loginObjects.btnSubmit);
 });
 
 Cypress.Commands.add('mouseOver', (locator) => {
@@ -46,20 +53,20 @@ Cypress.Commands.add('waitAllGetRequest', () => {
 });
 
 Cypress.Commands.add('validateIfElementExists', (locator) => {
-        cy.get(locator).should('be.visible');
+    cy.get(locator).should('be.visible');
 });
 
 Cypress.Commands.add('validateUrlContain', (text) => {
-        cy.url().should('contain', text);
+    cy.url().should('contain', text);
 });
 
 Cypress.Commands.add('fill', (locator, text) => {
-        cy.get(locator).clear();
-        cy.get(locator).type(text);
+    cy.get(locator).clear();
+    cy.get(locator).type(text);
 });
 
 Cypress.Commands.add('clickElement', (locator) => {
-        cy.get(locator).click();
+    cy.get(locator).click();
 });
 
 Cypress.Commands.add('selectValue', (locator, value) => {

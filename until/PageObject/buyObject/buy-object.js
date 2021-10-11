@@ -7,6 +7,9 @@ class BuyObjects{
     selectQuantity = '[name="quantity"]:first'
     quantitySelected = '[class="a-dropdown-prompt"]'
     btnConfirmAdd = '[type="image"]'
+    tittleItemAnnouncement = 'h1:first'
+    tittleItemFinish = '[class="a-truncate-cut"]'
+    btnDeleteItem = '.sc-action-delete > .a-declarative'
 }
 
 export default BuyObjects

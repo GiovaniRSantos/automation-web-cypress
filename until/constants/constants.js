@@ -5,7 +5,7 @@ class Constants {
     loggedName = 'Olá, Teste'
 
     urlDefault = 'www.amazon.com.br/'
-    productDefault = 'Livro'
+    productDefault = 'Chocolate'
     amountDefault = '2'
 }
 

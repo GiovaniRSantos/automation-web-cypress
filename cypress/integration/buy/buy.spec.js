@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import BuyPage from "../../../until/pages/buy-page";
+import BuyPage from "../../../until/pages/buyPage/buy-page";
 import Constants from "../../../until/constants/constants";
 import BuyObjects from "../../../until/PageObject/buyObject/buy-object";
 
@@ -39,14 +39,14 @@ context('FEATURE-BUY ITEM', () => {
 
     describe('Validate Add item to cart successfully', () => {
         it('Given you have selected an item', () => {
-            cy.selectValue(buyObjects.selectQuantity, constants.amountDefault);
-            cy.clickElement(buyObjects.btnAdd);
+            buyPage.validateItemCart();
         })
         it('When you click on the add to cart button', () => {
-
+            cy.validateElementText(buyObjects.quantitySelected, constants.amountDefault);
         });
         it('Then the message is displayed stating that it has been added to the cart', () => {
-            buyPage.validateQuantityAdd(constants.amountDefault);
+            buyPage.deleteAllItemsCart();
+            cy.closeSessionNavigator();
         });
     });
 });
