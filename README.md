@@ -26,7 +26,7 @@ Instructions for scripts:
 
 Use to:
 - cypress:open
-  -- ForOpen Cypress
+  -- For Open Cypress
   
 - cy:run
   -- For run all specs headless mode with allure report
