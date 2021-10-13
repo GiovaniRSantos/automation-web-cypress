@@ -29,6 +29,7 @@ Use to:
 - allure 
   -- For remove all folders created by the report
   
+  
 -allure:clear-Windows  
   -- Remove all folders created by the report in OS Windows
   
